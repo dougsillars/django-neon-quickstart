@@ -15,9 +15,9 @@ jobs:
         with:
           project_id: ep-long-wave-a4wf9n65
           # optional (defaults to your primary branch)
-          #parent: main 
+          parent: main 
           # optional (defaults to neondb)
-          #database: my-database
+          database: neondb
           branch_name: development
           username: neondb_owner
           api_key: ${{ secrets.NEON_API_KEY }}
