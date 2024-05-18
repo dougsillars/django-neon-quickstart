@@ -9,7 +9,13 @@ jobs:
   Create-Neon-Branch:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Using API Key "
+      - name: Verify NEON API Key presence
+        run: |
+          if [ -z "${{ secrets.NEON_API_KEY }}" ]; then
+            echo "NEON_API_KEY is empty"
+          else
+            echo "NEON_API_KEY is set"
+          fi
       - name: Create Neon Branch
         id: create-branch
         uses: neondatabase/create-branch-action@v5
