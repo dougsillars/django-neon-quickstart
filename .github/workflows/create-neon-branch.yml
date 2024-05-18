@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Create Neon Branch
         id: create-branch
-        uses: neondatabase/create-branch-action@v5
+        uses: neondatabase/create-branch-action
         with:
           project_id: ep-summer-hall-a4z2l10m
           # optional (defaults to your primary branch)

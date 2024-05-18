@@ -1,6 +1,10 @@
 name: Delete Neon Branch with GitHub Actions Demo
 run-name: Delete a Neon Branch 🚀
-on: [push]
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 jobs:
   delete-neon-branch:
     uses: neondatabase/delete-branch-action@v3
