@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened]
     branches:
-      - dev  # Assuming you want to run this action when a PR is opened against the 'dev' branch
+      - main  # Assuming you want to run this action when a PR is opened against the 'dev' branch
 
 
 jobs:
