@@ -9,7 +9,7 @@ jobs:
   Create-Neon-Branch:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Using API Key ${{ secrets.NEON_API_KEY }}"
+      - run: echo "Using API Key "
       - name: Create Neon Branch
         id: create-branch
         uses: neondatabase/create-branch-action@v5
