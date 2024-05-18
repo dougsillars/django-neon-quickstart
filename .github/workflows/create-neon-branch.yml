@@ -21,7 +21,7 @@ jobs:
         uses: neondatabase/create-branch-action@v5
         with:
           project_id: "orange-violet-68318343"
-          # optional (defaults to your primary branch)
+          # optional (defaults to your primary  branch)
           parent: "main" 
           # optional (defaults to neondb)
           database: "neondb"
