@@ -20,7 +20,7 @@ jobs:
           #database: my-database
           branch_name: development
           username: neondb_owner
-          api_key: ${{ secrets.NEON_API_KEYs }}
+          api_key: ${{ secrets.NEON_API_KEY }}
       - run: echo db_url ${{ steps.create-branch.outputs.db_url }}
       - run: echo host ${{ steps.create-branch.outputs.host }}
       - run: echo branch_id ${{ steps.create-branch.outputs.branch_id }}
