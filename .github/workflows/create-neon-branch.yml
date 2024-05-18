@@ -15,12 +15,12 @@ jobs:
         with:
           project_id: ep-summer-hall-a4z2l10m
           # optional (defaults to your primary branch)
-          #parent: main
+          #parent: main 
           # optional (defaults to neondb)
           #database: my-database
           branch_name: development
           username: neondb_owner
-          api_key: ${{ secrets.NEON_API_KEY }}
+          api_key: ${{ secrets.NEON_API_KEYs }}
       - run: echo db_url ${{ steps.create-branch.outputs.db_url }}
       - run: echo host ${{ steps.create-branch.outputs.host }}
       - run: echo branch_id ${{ steps.create-branch.outputs.branch_id }}
