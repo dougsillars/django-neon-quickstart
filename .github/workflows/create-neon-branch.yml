@@ -20,7 +20,7 @@ jobs:
         id: create-branch
         uses: neondatabase/create-branch-action@v5
         with:
-          project_id: "ep-long-wave-a4wf9n65"
+          project_id: "orange-violet-68318343"
           # optional (defaults to your primary branch)
           parent: "main" 
           # optional (defaults to neondb)
