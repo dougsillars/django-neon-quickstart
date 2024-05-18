@@ -23,5 +23,3 @@ urlpatterns = [
     path('', elements_list, name='elements_list'),
     path('element/<int:item_id>/', element_delete, name='element_delete')
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
