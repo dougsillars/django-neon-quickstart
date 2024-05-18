@@ -1,0 +1,10 @@
+name: Delete Neon Branch with GitHub Actions Demo
+run-name: Delete a Neon Branch 🚀
+on: [push]
+jobs:
+  delete-neon-branch:
+    uses: neondatabase/delete-branch-action@v3
+    with:
+      project_id: ep-long-wave-a4wf9n65
+      branch: dev
+      api_key: {{ secrets.NEON_API_KEY }}
