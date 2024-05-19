@@ -48,8 +48,7 @@ services:
   instance_count: 1
   instance_size_slug: apps-s-1vcpu-0.5gb
   name: django-neon-quickstart
-  run_command: |2-
-
+  run_command: 
     pip install -r requirements.txt
     python manage.py makemigrations
     python manage.py migrate
