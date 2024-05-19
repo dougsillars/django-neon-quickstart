@@ -7,8 +7,27 @@ on:
       - main
 jobs:
   delete-neon-branch:
-    uses: neondatabase/delete-branch-action@v3
-    with:
-      project_id: ep-long-wave-a4wf9n65
-      branch: dev
-      api_key: ${{ secrets.NEON_API_KEY }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Neon branch
+        uses: neondatabase/delete-branch-action@v3
+        with:
+          project_id: "orange-violet-68318343"
+          branch: development
+          api_key: ${{ secrets.NEON_API_KEY }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Replace variables in YAML
+        run: |
+        sed -i 's|new_password|'"${{ secrets.NEON_PW }}"'|g' .do/app.yaml
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_KEY }}
+      - name: Set environment variables
+        run: |
+          doctl auth init -t ${{ secrets.DO_KEY }}
+          # Update the app with the new specifications from neon
+          #  use active project id from DO url
+          doctl apps update 3aec3cab-fca5-4829-b5f4-1fd9d41b16a9  --spec .do/default.yaml
+          doctl apps create-deployment 3aec3cab-fca5-4829-b5f4-1fd9d41b16a9

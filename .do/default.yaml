@@ -10,7 +10,7 @@ ingress:
     match:
       path:
         prefix: /
-name: seal-app-dev
+name: seal-app-prod
 region: nyc
 services:
 - build_command: |-
@@ -30,7 +30,7 @@ services:
     value: neondb_owner
   - key: PGPASSWORD
     scope: RUN_AND_BUILD_TIME
-    value: ${{ secrets.NEON_PW }}
+    value: new_password
   github:
     branch: main
     deploy_on_push: true
