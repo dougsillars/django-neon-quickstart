@@ -4,7 +4,7 @@ alerts:
 envs:
 - key: PGHOST
   scope: RUN_AND_BUILD_TIME
-  value: ${{ steps.create-branch.outputs.host }}
+  value: ep-long-wave-a4wf9n65.us-east-1.aws.neon.tech
 - key: PGDATABASE
   scope: RUN_AND_BUILD_TIME
   value: neondb
@@ -13,7 +13,7 @@ envs:
   value: neondb_owner
 - key: PGPASSWORD
   scope: RUN_AND_BUILD_TIME
-  value: ${{ steps.create-branch.outputs.password }}
+  value: 
 features:
 - buildpack-stack=ubuntu-22
 ingress:
@@ -34,7 +34,7 @@ services:
   envs:
   - key: PGHOST
     scope: RUN_AND_BUILD_TIME
-    value: ${{ steps.create-branch.outputs.host }}
+    value: ep-long-wave-a4wf9n65.us-east-1.aws.neon.tech
   - key: PGDATABASE
     scope: RUN_AND_BUILD_TIME
     value: neondb
@@ -43,7 +43,7 @@ services:
     value: neondb_owner
   - key: PGPASSWORD
     scope: RUN_AND_BUILD_TIME
-    value: ${{ steps.create-branch.outputs.password }}
+    value: ${{ secrets.NEON_PW }}
   github:
     branch: dev
     deploy_on_push: true
