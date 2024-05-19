@@ -23,7 +23,7 @@ ingress:
     match:
       path:
         prefix: /
-name: seal-app
+name: seal-app-dev
 region: nyc
 services:
 - environment_slug: python
