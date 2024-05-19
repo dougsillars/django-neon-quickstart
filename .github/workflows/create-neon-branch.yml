@@ -41,8 +41,7 @@ jobs:
         run: |
           doctl auth init -t ${{ secrets.DO_KEY }}
           # Update the app with the new specifications from neon
-          doctl apps update "urchin-app-tupo9" --spec urchin-app.yaml
-          doctl apps create-deployment "urchin-app-tupo9"
-        env:
+          doctl apps update "4086802c-a10e-4e18-98a1-327f40cef37a" --spec urchin-app.yaml
+          doctl apps create-deployment "4086802c-a10e-4e18-98a1-327f40cef37a"
           DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DO_KEY }}
 
