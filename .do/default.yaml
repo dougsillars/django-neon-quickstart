@@ -21,7 +21,7 @@ services:
   envs:
   - key: PGHOST
     scope: RUN_AND_BUILD_TIME
-    value: new_host
+    value: ep-long-wave-a4wf9n65.us-east-1.aws.neon.tech
   - key: PGDATABASE
     scope: RUN_AND_BUILD_TIME
     value: neondb
