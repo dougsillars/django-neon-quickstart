@@ -10,7 +10,7 @@ ingress:
     match:
       path:
         prefix: /
-name: seal-app-prod
+name: seal-app-dev
 region: nyc
 services:
 - build_command: |-
