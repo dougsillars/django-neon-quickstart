@@ -35,8 +35,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Replace variables in YAML
         run: |
-          sed -i 's|\${{ steps.create-branch.outputs.host }}|'"${{ steps.create-branch.outputs.host }}"'|g' .do/app.yaml
-          sed -i 's|\${{ steps.create-branch.outputs.password }}|'"${{ steps.create-branch.outputs.password }}"'|g' .do/app.yaml
+          sed -i 's|new_host|'"${{ steps.create-branch.outputs.host }}"'|g' .do/app.yaml
+          sed -i 's|new_password|'"${{ steps.create-branch.outputs.password }}"'|g' .do/app.yaml
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:

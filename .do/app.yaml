@@ -21,7 +21,7 @@ services:
   envs:
   - key: PGHOST
     scope: RUN_AND_BUILD_TIME
-    value: ${{ steps.create-branch.outputs.host }}
+    value: new_host
   - key: PGDATABASE
     scope: RUN_AND_BUILD_TIME
     value: neondb
@@ -30,7 +30,7 @@ services:
     value: neondb_owner
   - key: PGPASSWORD
     scope: RUN_AND_BUILD_TIME
-    value: ${{ steps.create-branch.outputs.password }}
+    value: new_password
   github:
     branch: main
     deploy_on_push: true
