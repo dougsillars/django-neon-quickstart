@@ -32,7 +32,7 @@ services:
     scope: RUN_AND_BUILD_TIME
     value: new_password
   github:
-    branch: main
+    branch: dev
     deploy_on_push: true
     repo: dougsillars/django-neon-quickstart
   http_port: 8000
