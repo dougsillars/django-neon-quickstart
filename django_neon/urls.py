@@ -19,6 +19,7 @@ from django.urls import path
 from elements.views import elements_list, element_delete
 
 urlpatterns = [
+    path('health/', health_check, name='health_check'),
     path('admin/', admin.site.urls),
     path('', elements_list, name='elements_list'),
     path('element/<int:item_id>/', element_delete, name='element_delete')
