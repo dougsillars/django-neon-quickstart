@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from elements.views import elements_list, element_delete
-from .views import health_check
+from django_neon.views import health_check
 
 urlpatterns = [
     path('health/', health_check, name='health_check'),
