@@ -11,4 +11,4 @@ jobs:
     with:
       project_id: ep-long-wave-a4wf9n65
       branch: dev
-      api_key: {{ secrets.NEON_API_KEY }}
+      api_key: ${{ secrets.NEON_API_KEY }}

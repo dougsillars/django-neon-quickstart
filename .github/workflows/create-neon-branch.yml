@@ -31,5 +31,16 @@ jobs:
       - run: echo db_url ${{ steps.create-branch.outputs.db_url }}
       - run: echo host ${{ steps.create-branch.outputs.host }}
       - run: echo branch_id ${{ steps.create-branch.outputs.branch_id }}
-
-
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_KEY }}
+      - name: Set environment variables
+        run: |
+          doctl auth init -t ${{ secrets.DO_KEY }}
+          # Update the app with the new specifications from neon
+          doctl apps update  4086802c-a10e-4e18-98a1-327f40cef37a --spec .do/urchin-app.yaml
+          doctl apps create-deployment 4086802c-a10e-4e18-98a1-327f40cef37a 
+          
