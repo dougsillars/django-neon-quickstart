@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Replace variables in YAML
         run: |
-        sed -i 's|new_password|'"${{ secrets.NEON_PW }}"'|g' .do/app.yaml
+          sed -i 's|new_password|'"${{ secrets.NEON_PW }}"'|g' .do/app.yaml
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
