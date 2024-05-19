@@ -4,23 +4,30 @@ on:
   pull_request:
     types: [opened]
     branches:
-      - main  # Assuming you want to run this action when a PR is opened against the 'main' branch
+      - main
 jobs:
   Create-Neon-Branch:
     runs-on: ubuntu-latest
     steps:
+      - name: Verify NEON API Key presence
+        run: |
+          if [ -z "${{ secrets.NEON_API_KEY }}" ]; then
+            echo "NEON_API_KEY is empty"
+          else
+            echo "NEON_API_KEY is set"
+          fi
       - name: Create Neon Branch
         id: create-branch
         uses: neondatabase/create-branch-action@v5
         with:
-          project_id: ep-summer-hall-a4z2l10m
-          # optional (defaults to your primary branch)
-          #parent: main
+          project_id: "orange-violet-68318343"
+          # optional (defaults to your primary  branch)
+          parent: "main" 
           # optional (defaults to neondb)
-          #database: my-database
-          branch_name: development
-          username: neondb_owner
-          api_key: ${{ secrets.NEON_API_KEY }}
+          database: "neondb"
+          branch_name: "development"
+          username: "neondb_owner"
+          api_key: "${{ secrets.NEON_API_KEY }}"
       - run: echo db_url ${{ steps.create-branch.outputs.db_url }}
       - run: echo host ${{ steps.create-branch.outputs.host }}
       - run: echo branch_id ${{ steps.create-branch.outputs.branch_id }}
