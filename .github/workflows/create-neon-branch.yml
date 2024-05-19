@@ -41,6 +41,5 @@ jobs:
         run: |
           doctl auth init -t ${{ secrets.DO_KEY }}
           # Update the app with the new specifications from neon
-          doctl apps update  4086802c-a10e-4e18-98a1-327f40cef37a --spec .do/app.yaml
-          doctl apps create-deployment 4086802c-a10e-4e18-98a1-327f40cef37a 
-          
+          doctl apps update 3aec3cab-fca5-4829-b5f4-1fd9d41b16a9 --spec .do/app.yaml
+          doctl apps create-deployment 3aec3cab-fca5-4829-b5f4-1fd9d41b16a9
